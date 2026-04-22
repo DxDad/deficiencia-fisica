@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deficiência Física no Ambiente Organizacional</title>
+  <meta name="description" content="Pesquisa bibliográfica sobre deficiência física no contexto organizacional: conceito, desafios, impactos na Gestão de Pessoas, propostas de inclusão e vantagem competitiva." />
+  <style>
+    :root {
+      --bg: #f8f5ef;
+      --surface: #fffdf9;
+      --surface-2: #f2ede4;
+      --text: #1f2c17;
+      --muted: #4f5f45;
+      --primary: #8b1428;
+      --primary-2: #c41e3a;
+      --accent: #8e3a07;
+      --accent-2: #b8520f;
+      --line: #dfd5c4;
+      --ok: #214d2d;
+      --shadow: 0 12px 30px rgba(31, 44, 23, 0.10);
+      --radius: 18px;
+      --radius-sm: 12px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.65;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; }
+    .container { width: min(var(--max), calc(100% - 2rem)); margin: 0 auto; }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    .skip-link:focus {
+      left: 1rem;
+      top: 1rem;
+      width: auto;
+      height: auto;
+      padding: .75rem 1rem;
+      background: #fff;
+      color: #000;
+      z-index: 1000;
+      border: 2px solid #000;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+      background: rgba(22, 29, 17, 0.92);
+      border-bottom: 1px solid rgba(255,255,255,.10);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      min-height: 72px;
+    }
+
+    .brand {
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: .02em;
+      text-decoration: none;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      font-size: .92rem;
+      padding: .45rem .7rem;
+      border-radius: 999px;
+    }
+
+    nav a:hover,
+    nav a:focus-visible {
+      background: rgba(255,255,255,.12);
+      outline: none;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 88vh;
+      display: flex;
+      align-items: end;
+      color: #fff;
+      overflow: clip;
+      background: #162111;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to top, rgba(20, 40, 10, .94) 0%, rgba(20, 40, 10, .55) 45%, rgba(20,40,10,.25) 100%),
+        url("team-diversity-cNm5fb8bU3eVrFQR5akBMq.webp") center 30% / cover no-repeat;
+      filter: brightness(.8);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      padding: 7rem 0 4rem;
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 1rem;
+      padding: .45rem .9rem;
+      border-radius: 999px;
+      background: var(--accent-2);
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font: 700 .78rem/1.2 Arial, Helvetica, sans-serif;
+    }
+
+    h1, h2, h3 { line-height: 1.18; margin: 0 0 1rem; }
+    h1 { font-size: clamp(2.4rem, 6vw, 4.4rem); }
+    h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); color: var(--primary); }
+    h3 { font-size: 1.3rem; color: var(--text); }
+
+    .hero .highlight { color: #fff; }
+    .hero p {
+      font-size: 1.12rem;
+      max-width: 58ch;
+      margin: 0 0 1.5rem;
+      color: rgba(255,255,255,.96);
+    }
+
+    .actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .button {
+      display: inline-block;
+      text-decoration: none;
+      border-radius: 12px;
+      padding: .95rem 1.3rem;
+      font: 700 .98rem/1.2 Arial, Helvetica, sans-serif;
+      border: 2px solid transparent;
+    }
+    .button-primary { background: var(--primary-2); color: #fff; }
+    .button-secondary { border-color: rgba(255,255,255,.65); color: #fff; }
+    .button:focus-visible, .button:hover { outline: none; filter: brightness(1.03); }
+
+    .stats {
+      background: var(--primary-2);
+      color: #fff;
+      padding: 2.2rem 0;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+    }
+    .stat {
+      text-align: center;
+      padding: 1rem;
+      border-left: 1px solid rgba(255,255,255,.18);
+    }
+    .stat:first-child { border-left: none; }
+    .stat strong {
+      display: block;
+      font-size: 2rem;
+      margin-bottom: .25rem;
+    }
+
+    main section { padding: 4.5rem 0; }
+    .section-kicker {
+      color: var(--accent-2);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font: 700 .8rem/1.2 Arial, Helvetica, sans-serif;
+      margin-bottom: .75rem;
+    }
+
+    .lead {
+      font-size: 1.08rem;
+      color: var(--muted);
+      max-width: 70ch;
+      margin-bottom: 1.5rem;
+    }
+
+    .grid-2, .grid-3, .grid-4 {
+      display: grid;
+      gap: 1.25rem;
+    }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.35rem;
+      box-shadow: var(--shadow);
+    }
+
+    .card p:last-child,
+    .card ul:last-child { margin-bottom: 0; }
+
+    .types .card h3,
+    .models .card h3,
+    .barriers .card h3,
+    .rh .card h3,
+    .props .card h3,
+    .impact .card h3,
+    .participants .card h3,
+    .accessibility .card h3 {
+      color: var(--primary);
+    }
+
+    .list-check,
+    .list-ref {
+      padding-left: 1.2rem;
+      margin: .75rem 0 0;
+    }
+
+    .list-check li,
+    .list-ref li { margin-bottom: .55rem; }
+
+    .quote {
+      border-left: 5px solid var(--accent-2);
+      background: #fff8f1;
+      padding: 1rem 1.1rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin-top: 1.2rem;
+      color: #58301a;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 1rem;
+      align-items: start;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 1rem;
+    }
+    .timeline-item strong { color: var(--primary); font-size: 1.05rem; }
+
+    .case-layout {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .image-card img {
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+    }
+
+    .references .card {
+      padding: 1rem 1.1rem;
+    }
+
+    .references ol {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+    .references li { margin-bottom: .9rem; }
+    .references .type {
+      display: inline-block;
+      margin-bottom: .35rem;
+      padding: .2rem .5rem;
+      border-radius: 999px;
+      background: var(--surface-2);
+      color: var(--muted);
+      font: 700 .75rem/1.2 Arial, Helvetica, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+
+    footer {
+      background: #162111;
+      color: #fff;
+      padding: 3rem 0;
+      margin-top: 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .footer-logo {
+      max-width: 180px;
+      background: #fff;
+      padding: .5rem .75rem;
+      border-radius: 12px;
+      margin-top: 1rem;
+    }
+
+    .small { font-size: .95rem; color: var(--muted); }
+    .footer-small { font-size: .88rem; color: rgba(255,255,255,.88); }
+
+    @media (max-width: 960px) {
+      .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .grid-3, .grid-2, .case-layout, .footer-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .stat { border-left: none; border-top: 1px solid rgba(255,255,255,.18); }
+      .stat:nth-child(-n+2) { border-top: none; }
+    }
+
+    @media (max-width: 640px) {
+      .grid-4, .stats-grid { grid-template-columns: 1fr; }
+      .hero-inner { padding-top: 6rem; }
+      .timeline-item { grid-template-columns: 1fr; }
+      .nav { padding: .8rem 0; }
+      nav ul { gap: .35rem; }
+      nav a { font-size: .86rem; padding: .38rem .55rem; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#inicio">Deficiência Física no Ambiente Organizacional</a>
+      <nav aria-label="Seções principais">
+        <ul>
+          <li><a href="#conceito">Conceito</a></li>
+          <li><a href="#desafios">Desafios</a></li>
+          <li><a href="#gestao">Gestão de Pessoas</a></li>
+          <li><a href="#propostas">Propostas</a></li>
+          <li><a href="#caso-real">Caso Real</a></li>
+          <li><a href="#conclusao">Conclusão</a></li>
+          <li><a href="#referencias">Referências</a></li>
+          <li><a href="#participantes">Participantes</a></li>
+          <li><a href="#acessibilidade">Acessibilidade</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" id="inicio" aria-labelledby="titulo-principal">
+      <div class="container hero-inner">
+        <div class="eyebrow">Pesquisa bibliográfica — Gestão de Pessoas</div>
+        <h1 id="titulo-principal">Deficiência Física no<br><span class="highlight">Ambiente Organizacional</span></h1>
+        <p>Uma análise aprofundada sobre conceito, desafios, impactos na Gestão de Pessoas, propostas de inclusão e a inclusão como vantagem competitiva.</p>
+        <div class="actions">
+          <a class="button button-primary" href="#conceito">Explorar Pesquisa</a>
+          <a class="button button-secondary" href="#referencias">Ver Referências</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Dados de contexto">
+      <div class="container stats-grid">
+        <div class="stat"><strong>24%</strong><span>da população brasileira possui algum tipo de deficiência (IBGE, 2010)</span></div>
+        <div class="stat"><strong>634 mil</strong><span>PCD empregados no mercado formal (Gov. Federal, 2025)</span></div>
+        <div class="stat"><strong>Lei 8.213</strong><span>Lei de Cotas desde 1991, com 2% a 5% das vagas</span></div>
+        <div class="stat"><strong>Lei 13.146</strong><span>Lei Brasileira de Inclusão da Pessoa com Deficiência (2015)</span></div>
+      </div>
+    </section>
+
+    <section id="conceito">
+      <div class="container">
+        <div class="section-kicker">01 • Fundamentação teórica</div>
+        <h2>Conceito de Deficiência Física</h2>
+        <p class="lead">A compreensão da deficiência física evoluiu do modelo médico, centrado na lesão ou limitação individual, para o modelo biopsicossocial, que reconhece a interação entre condição de saúde, barreiras contextuais e participação social.</p>
+
+        <div class="card" style="margin-bottom: 1.25rem;">
+          <p>Em consonância com a Lei Brasileira de Inclusão, considera-se pessoa com deficiência aquela que tem impedimento de longo prazo de natureza física, mental, intelectual ou sensorial, em interação com uma ou mais barreiras, podendo ter obstruída sua participação plena e efetiva na sociedade em igualdade de condições com as demais pessoas.</p>
+          <p>O Decreto nº 3.298/1999 caracteriza a deficiência física como alteração completa ou parcial de um ou mais segmentos do corpo humano, acarretando comprometimento da função física. Essa definição abrange condições como paraplegia, tetraplegia, hemiplegia, amputações e paralisia cerebral.</p>
+        </div>
+
+        <div class="grid-2">
+          <div>
+            <h3>Principais tipos de deficiência física</h3>
+            <div class="grid-2 types">
+              <article class="card"><h3>Paraplegia</h3><p>Perda total das funções motoras dos membros inferiores.</p></article>
+              <article class="card"><h3>Tetraplegia</h3><p>Perda das funções motoras dos quatro membros.</p></article>
+              <article class="card"><h3>Hemiplegia</h3><p>Perda das funções motoras de um lado do corpo.</p></article>
+              <article class="card"><h3>Monoplegia</h3><p>Perda das funções motoras de um único membro.</p></article>
+              <article class="card"><h3>Amputação</h3><p>Ausência total ou parcial de um membro.</p></article>
+              <article class="card"><h3>Paralisia cerebral</h3><p>Comprometimento motor decorrente de lesão cerebral.</p></article>
+            </div>
+          </div>
+
+          <div>
+            <h3>Modelos conceituais</h3>
+            <div class="models grid-1">
+              <article class="card"><h3>Modelo médico</h3><p>Foco na lesão ou limitação como problema individual.</p></article>
+              <article class="card"><h3>Modelo social</h3><p>A sociedade cria as barreiras, não a deficiência.</p></article>
+              <article class="card"><h3>Modelo biopsicossocial</h3><p>Interação entre saúde, funcionalidade e fatores contextuais, em diálogo com a CIF/OMS.</p></article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="desafios" style="background: var(--surface-2);">
+      <div class="container">
+        <div class="section-kicker">02 • Contexto organizacional</div>
+        <h2>Desafios no Ambiente Organizacional</h2>
+        <p class="lead">Apesar dos avanços legais, a inclusão efetiva ainda enfrenta barreiras físicas, tecnológicas, comportamentais, comunicacionais e culturais. A presença da pessoa com deficiência no trabalho depende não apenas da contratação, mas das condições concretas de participação e permanência.</p>
+
+        <div class="grid-2 barriers">
+          <article class="card">
+            <h3>Barreiras físicas e tecnológicas</h3>
+            <p>Obstáculos arquitetônicos, mobiliário inadequado, ausência de adaptações ergonômicas e recursos assistivos comprometem a mobilidade, a autonomia e a segurança no trabalho.</p>
+          </article>
+          <article class="card">
+            <h3>Barreiras comportamentais</h3>
+            <p>Preconceitos, estigmas e expectativas reduzidas sobre desempenho tendem a limitar oportunidades e a reforçar exclusão simbólica dentro das equipes.</p>
+          </article>
+          <article class="card">
+            <h3>Barreiras de comunicação</h3>
+            <p>Práticas comunicacionais pouco acessíveis e falta de adequação de ferramentas podem afetar pessoas com comprometimentos motores associados à fala, escrita ou uso de interfaces digitais.</p>
+          </article>
+          <article class="card">
+            <h3>Barreiras culturais</h3>
+            <p>Culturas organizacionais pouco inclusivas naturalizam desigualdades, tratam adaptações como exceção e dificultam a construção de pertencimento.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="gestao">
+      <div class="container">
+        <div class="section-kicker">03 • Recursos humanos</div>
+        <h2>Impactos na Gestão de Pessoas</h2>
+        <p class="lead">Os impactos atravessam todo o ciclo de gestão, do recrutamento à avaliação de desempenho. A inclusão exige revisão de práticas, critérios e instrumentos, sempre com foco em equidade e acessibilidade.</p>
+
+        <div class="grid-2 rh">
+          <article class="card">
+            <h3>Recrutamento e seleção</h3>
+            <p>É necessário revisar linguagem de vagas, etapas de seleção, canais de candidatura e critérios de avaliação, garantindo acessibilidade e reduzindo vieses capacitistas.</p>
+          </article>
+          <article class="card">
+            <h3>Integração (onboarding)</h3>
+            <p>O ingresso de novos profissionais demanda preparação do ambiente, sensibilização da equipe e provisão das adaptações necessárias desde o primeiro dia.</p>
+          </article>
+          <article class="card">
+            <h3>Desenvolvimento</h3>
+            <p>Treinamentos, trilhas de aprendizagem e oportunidades de progressão precisam estar disponíveis em formatos acessíveis e com suporte adequado.</p>
+          </article>
+          <article class="card">
+            <h3>Avaliação de desempenho</h3>
+            <p>A avaliação deve ser contextualizada, justa e livre de paternalismo ou subestimação, reconhecendo resultados e condições reais de trabalho.</p>
+          </article>
+        </div>
+
+        <div class="quote">Equipes diversas geram soluções mais criativas e inovadoras, mas isso depende de processos inclusivos consistentes e não apenas do atendimento formal à legislação.</div>
+      </div>
+    </section>
+
+    <section id="propostas" style="background: var(--surface-2);">
+      <div class="container">
+        <div class="section-kicker">04 • Soluções práticas</div>
+        <h2>Propostas de Inclusão</h2>
+        <div class="grid-2 props">
+          <article class="card">
+            <h3>Adaptações práticas</h3>
+            <ul class="list-check">
+              <li>Mesas com altura regulável e cadeiras adaptadas.</li>
+              <li>Rampas, portas mais largas e banheiros acessíveis.</li>
+              <li>Vagas reservadas e rotas acessíveis.</li>
+              <li>Flexibilidade de horários e possibilidade de trabalho remoto.</li>
+              <li>Sinalização tátil e visual nos espaços.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Ferramentas de acessibilidade</h3>
+            <ul class="list-check">
+              <li>Teclados com colmeia para mobilidade reduzida nas mãos.</li>
+              <li>Mouses adaptados, inclusive acionados por pé, cabeça ou olhos.</li>
+              <li>Softwares de reconhecimento de voz.</li>
+              <li>Suportes articulados para monitores e documentos.</li>
+              <li>Leitores de tela e ampliadores de conteúdo digital.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Ações de liderança</h3>
+            <ul class="list-check">
+              <li>Participar ativamente de treinamentos sobre diversidade.</li>
+              <li>Combater atitudes discriminatórias na equipe.</li>
+              <li>Garantir adaptações necessárias e remover barreiras.</li>
+              <li>Promover segurança psicológica e respeito mútuo.</li>
+              <li>Incluir pessoas com deficiência em decisões e projetos relevantes.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Boas práticas organizacionais</h3>
+            <ul class="list-check">
+              <li>Criar comitês ou grupos de afinidade focados em diversidade.</li>
+              <li>Realizar censos internos para mapear perfis e necessidades.</li>
+              <li>Implantar programas contínuos de letramento e sensibilização.</li>
+              <li>Estabelecer parcerias com instituições especializadas.</li>
+              <li>Formalizar políticas documentadas de diversidade e inclusão.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="case-layout" style="margin-top: 1.5rem;">
+          <article class="card image-card">
+            <img src="accessibility-tech-jDmr6bfsBk3MWQFjrRbHq6.webp" alt="Tecnologias assistivas sobre uma mesa, com teclado adaptado, joystick, tablet com recursos de acessibilidade e smartphone com comando por voz." />
+          </article>
+          <article class="card">
+            <h3>Tecnologias assistivas em destaque</h3>
+            <ul class="list-check">
+              <li><strong>Reconhecimento de voz:</strong> Dragon NaturallySpeaking, Windows Speech Recognition.</li>
+              <li><strong>Controle ocular:</strong> soluções de rastreamento de olhos para navegação.</li>
+              <li><strong>Teclados adaptados:</strong> colmeia, teclado virtual e modelos de uma mão.</li>
+              <li><strong>Joystick e trackball:</strong> alternativas de controle de cursor.</li>
+              <li><strong>Suportes de braço:</strong> redução de esforço muscular e ganho de autonomia.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="caso-real">
+      <div class="container">
+        <div class="section-kicker">05 • Estudo de caso</div>
+        <h2>Exemplo Real: Magazine Luiza</h2>
+        <div class="case-layout">
+          <article class="card">
+            <p>O Magazine Luiza é frequentemente citado como referência nacional em diversidade e inclusão. Desde 2013, mantém um Programa de Inclusão Social com ações voltadas à acessibilidade arquitetônica, formação interna e fortalecimento de políticas organizacionais.</p>
+            <p>No âmbito digital, a empresa também se destaca por iniciativas de acessibilidade em seu ecossistema de comércio eletrônico, incluindo soluções tecnológicas de apoio à inclusão.</p>
+            <div class="quote">“Ter uma cultura de diversidade é tão importante quanto ter políticas e práticas de inclusão estruturadas.”</div>
+          </article>
+
+          <article class="card">
+            <h3>Linha do tempo de ações</h3>
+            <div class="timeline">
+              <div class="timeline-item"><strong>1991</strong><span>Lei nº 8.213, conhecida como Lei de Cotas, entra em vigor no Brasil.</span></div>
+              <div class="timeline-item"><strong>2012</strong><span>Acordo com o MPT para contratar 800 pessoas com deficiência.</span></div>
+              <div class="timeline-item"><strong>2013</strong><span>Lançamento do Programa de Inclusão Social com cursos de Libras.</span></div>
+              <div class="timeline-item"><strong>2015</strong><span>Entrada em vigor da Lei Brasileira de Inclusão.</span></div>
+              <div class="timeline-item"><strong>2021</strong><span>Integração ao Bloomberg Gender-Equality Index.</span></div>
+              <div class="timeline-item"><strong>2022</strong><span>Formalização da Política de Diversidade e Inclusão POL-PDI-ML.</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="conclusao" style="background: var(--surface-2);">
+      <div class="container">
+        <div class="section-kicker">06 • Síntese</div>
+        <h2>Inclusão como Vantagem Competitiva</h2>
+        <p class="lead">A inclusão de pessoas com deficiência física no ambiente organizacional transcende o cumprimento formal de cotas. Trata-se de compromisso ético, responsabilidade social e estratégia de negócio capaz de ampliar inovação, engajamento, retenção de talentos, reputação institucional e produtividade.</p>
+
+        <div class="grid-4 impact">
+          <article class="card"><h3>Inovação</h3><p>Equipes diversas tendem a produzir soluções mais criativas e perspectivas mais amplas sobre problemas complexos.</p></article>
+          <article class="card"><h3>Engajamento</h3><p>Ambientes inclusivos fortalecem pertencimento, confiança e comprometimento com os objetivos organizacionais.</p></article>
+          <article class="card"><h3>Retenção</h3><p>Políticas inclusivas reduzem rotatividade e favorecem permanência com qualidade no trabalho.</p></article>
+          <article class="card"><h3>Reputação</h3><p>Organizações inclusivas ampliam valor de marca, aderência a agendas ESG e legitimidade social.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="referencias" class="references">
+      <div class="container">
+        <div class="section-kicker">07 • Fontes consultadas</div>
+        <h2>Referências Bibliográficas</h2>
+        <div class="card">
+          <ol>
+            <li><span class="type">Artigo científico</span><br>BAMPI, L. N. S. et al. Modelo social: uma nova abordagem para o tema deficiência. Revista Latino-Americana de Enfermagem, 2010.</li>
+            <li><span class="type">Artigo científico</span><br>MORAIS, I. A. et al. Modelo biopsicossocial na avaliação da deficiência. Ciência &amp; Saúde Coletiva, v. 30, n. 8, 2025.</li>
+            <li><span class="type">Legislação</span><br>BRASIL. Lei nº 13.146, de 6 de julho de 2015. Lei Brasileira de Inclusão da Pessoa com Deficiência.</li>
+            <li><span class="type">Legislação</span><br>BRASIL. Decreto nº 3.298, de 20 de dezembro de 1999.</li>
+            <li><span class="type">Documento institucional</span><br>UNIVERSIDADE FEDERAL DE SANTA CATARINA. Deficiência Física: tipos e definições. 2017.</li>
+            <li><span class="type">Legislação</span><br>BRASIL. Lei nº 8.213, de 24 de julho de 1991. Lei de Cotas.</li>
+            <li><span class="type">Dados oficiais</span><br>IBGE. Censo Demográfico 2010: Características Gerais da População, Religião e Pessoas com Deficiência.</li>
+            <li><span class="type">Artigo científico</span><br>CRUZ, V. V. et al. Barreiras de acessibilidade para pessoas com deficiência. Research, Society and Development Journal, 2020.</li>
+            <li><span class="type">Livro/manual</span><br>BERSCH, R. Introdução à Tecnologia Assistiva. Porto Alegre: CEDI, 2017.</li>
+            <li><span class="type">Publicação institucional</span><br>FUNDAÇÃO DORINA NOWILL. Conheça 7 tipos de acessibilidade para tornar nossa sociedade mais inclusiva. 2022.</li>
+            <li><span class="type">Artigo científico</span><br>Inclusão da pessoa com deficiência no mercado de trabalho em Belo Horizonte, Brasil: cenário e perspectiva. Ciência &amp; Saúde Coletiva, 2015.</li>
+            <li><span class="type">Publicação institucional</span><br>INSTITUTO INCLUSÃO BRASIL. Tipos de Acessibilidade.</li>
+            <li><span class="type">Livro</span><br>BENUTE, G. R. G. (Org.). Gestão e Processo de Inclusão de Colaboradores com Deficiência. 2021.</li>
+            <li><span class="type">Publicação técnica</span><br>SENIOR SISTEMAS. Recrutamento inclusivo: o que é e como implantar na prática. 2025.</li>
+            <li><span class="type">Publicação técnica</span><br>METADADOS. Onboarding inclusivo: decisivo para a retenção de talentos. 2025.</li>
+            <li><span class="type">Documento oficial</span><br>MINISTÉRIO DA EDUCAÇÃO. Deficiência Física: Estratégias e Orientações Pedagógicas.</li>
+            <li><span class="type">Artigo em evento</span><br>SUZANO, J. C. C. et al. Formas de ver as pessoas com deficiência e avaliação do desempenho no trabalho. Encontro da ANPAD, 2011.</li>
+            <li><span class="type">Dissertação/tese</span><br>UFSC. Inclusão de pessoas com deficiência na indústria: acessibilidade e adequação ergonômica de postos de trabalho.</li>
+            <li><span class="type">Publicação institucional</span><br>FUNDAÇÃO TELEFÔNICA VIVO. 11 ferramentas de acessibilidade para pessoas com deficiência. 2020.</li>
+            <li><span class="type">Manual</span><br>ACCESSIBILITY DAY. Liderança Inclusiva: Manual de Boas Práticas.</li>
+            <li><span class="type">Guia</span><br>IBRAM. Guia de Boas Práticas em Diversidade, Equidade e Inclusão. 2ª edição, 2025.</li>
+            <li><span class="type">Publicação técnica</span><br>HAND TALK. A inclusão no DNA: o que o Magazine Luiza faz para ser referência em diversidade.</li>
+            <li><span class="type">Documento corporativo</span><br>MAGAZINE LUIZA. Política de Diversidade e Inclusão POL-PDI-ML. 2022.</li>
+            <li><span class="type">Publicação técnica</span><br>LEVEL ACCESS. Magazine Luiza Disability Channel.</li>
+            <li><span class="type">Artigo jornalístico</span><br>SARAIVA, M. L. No clima da Paralimpíada: 5 empresas que estão mudando a realidade de profissionais com deficiência no Brasil. Forbes Brasil, 2021.</li>
+            <li><span class="type">Dados oficiais</span><br>GOVERNO FEDERAL DO BRASIL. Brasil registra mais de 63 mil contratações de pessoas com deficiência em 2025.</li>
+            <li><span class="type">Publicação técnica</span><br>TALENTO INCLUIR. O Caminho para uma Inclusão Verdadeira de PCD nas Empresas. 2024.</li>
+            <li><span class="type">Artigo científico</span><br>FELIZARDO, P. S. D. et al. Inclusão de pessoas com deficiência nas organizações e impacto no clima organizacional. Revista FAE, 2016.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="participantes">
+      <div class="container">
+        <div class="section-kicker">08 • Créditos</div>
+        <h2>Participantes do Projeto</h2>
+        <div class="card" style="margin-bottom: 1.25rem;">
+          <p>Este projeto foi desenvolvido como trabalho de extensão para a <strong>Escola Superior de Publicidade e Marketing (ESPM)</strong>, com o objetivo de produzir uma pesquisa bibliográfica abrangente sobre deficiência física no contexto organizacional.</p>
+          <p>Abaixo estão os membros do grupo responsáveis por este trabalho.</p>
+        </div>
+
+        <div class="grid-4 participants">
+          <article class="card"><h3>[Nome do Participante 1]</h3><p class="small">[Empresa]</p><p>[Cargo/Posição]</p></article>
+          <article class="card"><h3>[Nome do Participante 2]</h3><p class="small">[Empresa]</p><p>[Cargo/Posição]</p></article>
+          <article class="card"><h3>[Nome do Participante 3]</h3><p class="small">[Empresa]</p><p>[Cargo/Posição]</p></article>
+          <article class="card"><h3>[Nome do Participante 4]</h3><p class="small">[Empresa]</p><p>[Cargo/Posição]</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="acessibilidade" style="background: var(--surface-2);">
+      <div class="container accessibility">
+        <div class="section-kicker">09 • Compromisso com acessibilidade</div>
+        <h2>Medidas de Acessibilidade Digital Implementadas</h2>
+        <div class="grid-2">
+          <article class="card"><h3>Conformidade com WCAG</h3><p>Estrutura estática, sem dependência de scripts do Manus, com foco em contraste, legibilidade, responsividade e semântica adequada para publicação simples em GitHub Pages.</p></article>
+          <article class="card"><h3>Navegação por teclado</h3><p>Todos os links e seções principais são acessíveis via teclado, com link de salto para o conteúdo e ordem lógica de navegação.</p></article>
+          <article class="card"><h3>Hierarquia de cabeçalhos</h3><p>Organização semântica com H1, H2 e H3 para facilitar navegação por leitores de tela e compreensão estrutural da página.</p></article>
+          <article class="card"><h3>Texto alternativo em imagens</h3><p>As imagens principais possuem atributo <span lang="en">alt</span> descritivo, preservando o acesso ao conteúdo visual essencial.</p></article>
+          <article class="card"><h3>Compatibilidade com leitores de tela</h3><p>O conteúdo foi reorganizado em HTML simples, sem roteamento em SPA, o que tende a melhorar a estabilidade em leitores de tela e em hospedagem estática.</p></article>
+          <article class="card"><h3>Publicação simplificada</h3><p>Esta versão foi desenhada para funcionar diretamente no GitHub Pages, reduzindo dependências externas e pontos de falha de carregamento.</p></article>
+        </div>
+
+        <div class="card" style="margin-top: 1.25rem;">
+          <p><strong>Nota sobre acessibilidade:</strong> esta página foi desenvolvida com foco em design inclusivo e publicação estática estável. Se encontrar qualquer dificuldade de acesso ou identificar necessidade de melhoria, recomenda-se revisar contraste, conteúdo alternativo das imagens e clareza textual antes da versão final de entrega.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <h2 style="color:#fff; margin-bottom:.75rem;">Desenvolvido para ESPM</h2>
+        <p class="footer-small">Pesquisa bibliográfica sobre deficiência física no ambiente organizacional, com foco em conceito, desafios, impactos na Gestão de Pessoas, propostas de inclusão, estudo de caso e acessibilidade digital.</p>
+        <img class="footer-logo" src="espm-logo-official_48eb166e.png" alt="Logotipo da ESPM em branco sobre fundo bordô." />
+      </div>
+      <div>
+        <h3 style="color:#fff;">Legislação principal</h3>
+        <ul class="list-check footer-small">
+          <li>Lei nº 8.213/1991 — Lei de Cotas</li>
+          <li>Decreto nº 3.298/1999</li>
+          <li>Lei nº 13.146/2015 — Lei Brasileira de Inclusão</li>
+          <li>CIF/OMS (2001)</li>
+        </ul>
+        <p class="footer-small" style="margin-top: 1rem;">Gestão Inclusiva e Protagonismo da Pessoa com Deficiência — Grupo 2 — Deficiências Físicas</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
