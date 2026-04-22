@@ -229,8 +229,8 @@
       margin-bottom: 1.5rem;
     }
 
-    .grid-1,
-    .grid-2, .grid-3, .grid-4 {
+    grid-1,
+    .grid-2, .grid-3, .grid-4, .grid-5 {
       display: grid;
       gap: 1.25rem;
     }
@@ -238,6 +238,7 @@
     .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .grid-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
 
     .card {
       background: var(--surface);
@@ -362,7 +363,7 @@
     .footer-small { font-size: .88rem; color: rgba(255,255,255,.88); }
 
     @media (max-width: 960px) {
-      .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .grid-4, .grid-5 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .grid-3, .grid-2, .case-layout, .assistive-layout, .footer-grid { grid-template-columns: 1fr; }
       .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .stat { border-left: none; border-top: 1px solid rgba(255,255,255,.18); }
@@ -370,7 +371,7 @@
     }
 
     @media (max-width: 640px) {
-      .grid-4, .stats-grid { grid-template-columns: 1fr; }
+      .grid-4, .grid-5, .stats-grid { grid-template-columns: 1fr; }
       .hero-inner { padding-top: 6rem; }
       .nav { padding: .8rem 0; }
       nav ul { gap: .35rem; }
@@ -641,11 +642,12 @@
           <p>Abaixo estão os membros do grupo responsáveis por este trabalho.</p>
         </div>
 
-        <div class="grid-4 participants">
+        <div class="grid-5 participants">
           <article class="card"><h3>[Nome do Participante 1]</h3><p class="small">[Empresa]</p><p>[Cargo/Posição]</p></article>
           <article class="card"><h3>[Nome do Participante 2]</h3><p class="small">[Empresa]</p><p>[Cargo/Posição]</p></article>
           <article class="card"><h3>[Nome do Participante 3]</h3><p class="small">[Empresa]</p><p>[Cargo/Posição]</p></article>
           <article class="card"><h3>[Nome do Participante 4]</h3><p class="small">[Empresa]</p><p>[Cargo/Posição]</p></article>
+          <article class="card"><h3>[Nome do Participante 5]</h3><p class="small">[Empresa]</p><p>[Cargo/Posição]</p></article>
         </div>
       </div>
     </section>
