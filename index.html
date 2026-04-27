@@ -250,6 +250,14 @@
     main section {
       padding: 4.5rem 0;
       scroll-margin-top: calc(var(--header-height) + 16px);
+      position: relative;
+      transition: outline-color .2s ease, background-color .2s ease;
+    }
+
+    main section:target,
+    main section:focus-within {
+      outline: 3px solid rgba(11, 87, 208, 0.35);
+      outline-offset: -3px;
     }
     .section-kicker {
       color: #8b1428;
