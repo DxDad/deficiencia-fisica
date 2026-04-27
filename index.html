@@ -132,9 +132,21 @@
       content: "";
       position: absolute;
       inset: 0;
-      background:
-        linear-gradient(to top, rgba(20, 40, 10, .94) 0%, rgba(20, 40, 10, .55) 45%, rgba(20,40,10,.25) 100%),
-        url("team-diversity-cNm5fb8bU3eVrFQR5akBMq.webp") center 30% / cover no-repeat;
+      background: linear-gradient(to top, rgba(20, 40, 10, .94) 0%, rgba(20, 40, 10, .55) 45%, rgba(20,40,10,.25) 100%);
+      z-index: 1;
+    }
+
+    .hero-media {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
       filter: brightness(.8);
     }
 
@@ -401,8 +413,11 @@
   </header>
 
   <main id="conteudo" tabindex="-1">
-    <section class="hero" id="inicio" aria-labelledby="titulo-principal">
-      <div class="container hero-inner">
+        <section class="hero" id="inicio" aria-labelledby="titulo-principal">
+         <div class="hero-media">
+           <img src="team-diversity-cNm5fb8bU3eVrFQR5akBMq.webp" alt="Profissionais em ambiente corporativo, reunidos em torno de uma mesa, em uma cena de colaboração e diálogo no trabalho." />
+         </div>
+        <div class="container hero-inner">
         <div class="eyebrow">Pesquisa bibliográfica — Gestão de Pessoas</div>
         <h1 id="titulo-principal">Deficiência Física no<br><span class="highlight">Ambiente Organizacional</span></h1>
         <p>Uma análise aprofundada sobre conceito, desafios, impactos na Gestão de Pessoas, propostas de inclusão e a inclusão como vantagem competitiva.</p>
@@ -427,7 +442,7 @@
 
     <section id="conceito" aria-labelledby="conceito-titulo">
       <div class="container">
-        <div class="section-kicker">01 • Fundamentação teórica</div>
+        <div class="section-kicker" aria-hidden="true">01 • Fundamentação teórica</div>
         <h2 id="conceito-titulo">Conceito de Deficiência Física</h2>
         <p class="lead">A compreensão da deficiência física evoluiu do modelo médico, centrado na lesão ou limitação individual, para o modelo biopsicossocial, que reconhece a interação entre condição de saúde, barreiras contextuais e participação social.</p>
 
@@ -463,7 +478,7 @@
 
     <section id="desafios" aria-labelledby="desafios-titulo" style="background: var(--surface-2);">
       <div class="container">
-        <div class="section-kicker">02 • Contexto organizacional</div>
+        <div class="section-kicker" aria-hidden="true">02 • Contexto organizacional</div>
         <h2 id="desafios-titulo">Desafios no Ambiente Organizacional</h2>
         <p class="lead">Apesar dos avanços legais, a inclusão efetiva ainda enfrenta barreiras físicas, tecnológicas, comportamentais, comunicacionais e culturais. A presença da pessoa com deficiência no trabalho depende não apenas da contratação, mas das condições concretas de participação e permanência.</p>
 
@@ -490,7 +505,7 @@
 
     <section id="gestao" aria-labelledby="gestao-titulo">
       <div class="container">
-        <div class="section-kicker">03 • Recursos humanos</div>
+        <div class="section-kicker" aria-hidden="true">03 • Recursos humanos</div>
         <h2 id="gestao-titulo">Impactos na Gestão de Pessoas</h2>
         <p class="lead">Os impactos atravessam todo o ciclo de gestão, do recrutamento à avaliação de desempenho. A inclusão exige revisão de práticas, critérios e instrumentos, sempre com foco em equidade e acessibilidade.</p>
 
@@ -519,7 +534,7 @@
 
     <section id="propostas" aria-labelledby="propostas-titulo" style="background: var(--surface-2);">
       <div class="container">
-        <div class="section-kicker">04 • Soluções práticas</div>
+        <div class="section-kicker" aria-hidden="true">04 • Soluções práticas</div>
         <h2 id="propostas-titulo">Propostas de Inclusão</h2>
         <div class="grid-2 props">
           <article class="card">
@@ -587,7 +602,7 @@
 
     <section id="caso-real" aria-labelledby="caso-real-titulo">
       <div class="container">
-        <div class="section-kicker">05 • Estudo de caso</div>
+        <div class="section-kicker" aria-hidden="true">05 • Estudo de caso</div>
         <h2 id="caso-real-titulo">Exemplo Real: Magazine Luiza</h2>
         <div class="case-layout">
           <article class="card">
@@ -620,7 +635,7 @@
 
     <section id="conclusao" aria-labelledby="conclusao-titulo" style="background: var(--surface-2);">
       <div class="container">
-        <div class="section-kicker">06 • Síntese</div>
+        <div class="section-kicker" aria-hidden="true">06 • Síntese</div>
         <h2 id="conclusao-titulo">Inclusão como Vantagem Competitiva</h2>
         <p class="lead">A inclusão de pessoas com deficiência física no ambiente organizacional transcende o cumprimento formal de cotas. Trata-se de compromisso ético, responsabilidade social e estratégia de negócio capaz de ampliar inovação, engajamento, retenção de talentos, reputação institucional e produtividade.</p>
 
@@ -635,7 +650,7 @@
 
     <section id="participantes" aria-labelledby="participantes-titulo">
       <div class="container">
-        <div class="section-kicker">07 • Créditos</div>
+        <div class="section-kicker" aria-hidden="true">07 • Créditos</div>
         <h2 id="participantes-titulo">Participantes do Projeto</h2>
         <div class="card" style="margin-bottom: 1.25rem;">
           <p>Este projeto foi desenvolvido como trabalho de extensão para a <strong>Escola Superior de Publicidade e Marketing (ESPM)</strong>, com o objetivo de produzir uma pesquisa bibliográfica abrangente sobre deficiência física no contexto organizacional.</p>
@@ -654,7 +669,7 @@
 
     <section id="acessibilidade" aria-labelledby="acessibilidade-titulo" style="background: var(--surface-2);">
       <div class="container accessibility">
-        <div class="section-kicker">08 • Compromisso com acessibilidade</div>
+        <div class="section-kicker" aria-hidden="true">08 • Compromisso com acessibilidade</div>
         <h2 id="acessibilidade-titulo">Medidas de Acessibilidade Digital Implementadas</h2>
         <div class="grid-2">
           <article class="card"><h3>Conformidade com WCAG</h3><p>Estrutura estática, sem dependência de scripts do Manus, com foco em contraste, legibilidade, responsividade e semântica adequada para publicação simples em GitHub Pages.</p></article>
@@ -673,7 +688,7 @@
 
     <section id="referencias" class="references" aria-labelledby="referencias-titulo">
       <div class="container">
-        <div class="section-kicker">09 • Fontes consultadas</div>
+        <div class="section-kicker" aria-hidden="true">09 • Fontes consultadas</div>
         <h2 id="referencias-titulo">Referências Bibliográficas</h2>
         <div class="card">
           <ol>
