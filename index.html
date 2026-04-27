@@ -146,20 +146,35 @@
       inset: 0;
       background: linear-gradient(to top, rgba(20, 40, 10, .94) 0%, rgba(20, 40, 10, .55) 45%, rgba(20,40,10,.25) 100%);
       z-index: 1;
+      pointer-events: none;
     }
 
     .hero-media {
-      position: absolute;
-      inset: 0;
+      position: relative;
       z-index: 0;
+      margin: 0;
     }
 
     .hero-media img {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center 30%;
       filter: brightness(.8);
+    }
+
+    .hero-media figcaption {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
 
     .hero-inner {
@@ -426,9 +441,10 @@
 
   <main id="conteudo" tabindex="-1">
         <section class="hero" id="inicio" aria-labelledby="titulo-principal">
-         <div class="hero-media">
+          <figure class="hero-media">
            <img src="team-diversity-cNm5fb8bU3eVrFQR5akBMq.webp" alt="Profissionais em ambiente corporativo, reunidos em torno de uma mesa, em uma cena de colaboração e diálogo no trabalho." />
-         </div>
+          <figcaption>Imagem de abertura da página, com profissionais em ambiente corporativo, usada para representar colaboração e inclusão no trabalho.</figcaption>
+        </figure>
         <div class="container hero-inner">
         <div class="eyebrow">Pesquisa bibliográfica — Gestão de Pessoas</div>
         <h1 id="titulo-principal">Deficiência Física no<br><span class="highlight">Ambiente Organizacional</span></h1>
