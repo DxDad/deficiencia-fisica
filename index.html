@@ -66,6 +66,18 @@
       height: 1px;
       overflow: hidden;
     }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
     .skip-link:focus {
       left: 1rem;
       top: 1rem;
@@ -428,8 +440,9 @@
       </div>
     </section>
 
-    <section class="stats" aria-labelledby="dados-contexto-titulo">
+    <section class="stats" aria-labelledby="dados-contexto-regiao">
       <div class="container">
+        <div class="visually-hidden" id="dados-contexto-regiao">Dados iniciais da pesquisa</div>
         <h2 id="dados-contexto-titulo" style="color:#fff; margin-bottom:1rem;">Dados de contexto</h2>
         <ul class="stats-grid">
           <li class="stat"><strong>24%</strong><span>da população brasileira possui algum tipo de deficiência, segundo o IBGE no Censo 2010.</span></li>
@@ -440,10 +453,10 @@
       </div>
     </section>
 
-    <section id="conceito" aria-labelledby="conceito-titulo">
-      <div class="container">
-        <div class="section-kicker" aria-hidden="true">01 • Fundamentação teórica</div>
-        <h2 id="conceito-titulo">Conceito de Deficiência Física</h2>
+    <section id="conceito" aria-labelledby="conceito-regiao">
+    <div class="container">
+    <div class="section-kicker" id="conceito-regiao">01 • Fundamentação teórica</div>
+    <h2 id="conceito-titulo">Conceito de Deficiência Física</h2>
         <p class="lead">A compreensão da deficiência física evoluiu do modelo médico, centrado na lesão ou limitação individual, para o modelo biopsicossocial, que reconhece a interação entre condição de saúde, barreiras contextuais e participação social.</p>
 
         <div class="card" style="margin-bottom: 1.25rem;">
@@ -476,9 +489,9 @@
       </div>
     </section>
 
-    <section id="desafios" aria-labelledby="desafios-titulo" style="background: var(--surface-2);">
+    <section id="desafios" aria-labelledby="desafios-regiao" style="background: var(--surface-2);">
       <div class="container">
-        <div class="section-kicker" aria-hidden="true">02 • Contexto organizacional</div>
+        <div class="section-kicker" id="desafios-regiao">02 • Contexto organizacional</div>
         <h2 id="desafios-titulo">Desafios no Ambiente Organizacional</h2>
         <p class="lead">Apesar dos avanços legais, a inclusão efetiva ainda enfrenta barreiras físicas, tecnológicas, comportamentais, comunicacionais e culturais. A presença da pessoa com deficiência no trabalho depende não apenas da contratação, mas das condições concretas de participação e permanência.</p>
 
@@ -503,9 +516,9 @@
       </div>
     </section>
 
-    <section id="gestao" aria-labelledby="gestao-titulo">
+    <section id="gestao" aria-labelledby="gestao-regiao">
       <div class="container">
-        <div class="section-kicker" aria-hidden="true">03 • Recursos humanos</div>
+        <div class="section-kicker" id="gestao-regiao">03 • Recursos humanos</div>
         <h2 id="gestao-titulo">Impactos na Gestão de Pessoas</h2>
         <p class="lead">Os impactos atravessam todo o ciclo de gestão, do recrutamento à avaliação de desempenho. A inclusão exige revisão de práticas, critérios e instrumentos, sempre com foco em equidade e acessibilidade.</p>
 
@@ -532,9 +545,9 @@
       </div>
     </section>
 
-    <section id="propostas" aria-labelledby="propostas-titulo" style="background: var(--surface-2);">
+    <section id="propostas" aria-labelledby="propostas-regiao" style="background: var(--surface-2);">
       <div class="container">
-        <div class="section-kicker" aria-hidden="true">04 • Soluções práticas</div>
+        <div class="section-kicker" id="propostas-regiao">04 • Soluções práticas</div>
         <h2 id="propostas-titulo">Propostas de Inclusão</h2>
         <div class="grid-2 props">
           <article class="card">
@@ -600,9 +613,9 @@
       </div>
     </section>
 
-    <section id="caso-real" aria-labelledby="caso-real-titulo">
+    <section id="caso-real" aria-labelledby="caso-real-regiao">
       <div class="container">
-        <div class="section-kicker" aria-hidden="true">05 • Estudo de caso</div>
+        <div class="section-kicker" id="caso-real-regiao">05 • Estudo de caso</div>
         <h2 id="caso-real-titulo">Exemplo Real: Magazine Luiza</h2>
         <div class="case-layout">
           <article class="card">
@@ -633,9 +646,9 @@
       </div>
     </section>
 
-    <section id="conclusao" aria-labelledby="conclusao-titulo" style="background: var(--surface-2);">
+    <section id="conclusao" aria-labelledby="conclusao-regiao" style="background: var(--surface-2);">
       <div class="container">
-        <div class="section-kicker" aria-hidden="true">06 • Síntese</div>
+        <div class="section-kicker" id="conclusao-regiao">06 • Síntese</div>
         <h2 id="conclusao-titulo">Inclusão como Vantagem Competitiva</h2>
         <p class="lead">A inclusão de pessoas com deficiência física no ambiente organizacional transcende o cumprimento formal de cotas. Trata-se de compromisso ético, responsabilidade social e estratégia de negócio capaz de ampliar inovação, engajamento, retenção de talentos, reputação institucional e produtividade.</p>
 
@@ -648,9 +661,9 @@
       </div>
     </section>
 
-    <section id="participantes" aria-labelledby="participantes-titulo">
+    <section id="participantes" aria-labelledby="participantes-regiao">
       <div class="container">
-        <div class="section-kicker" aria-hidden="true">07 • Créditos</div>
+        <div class="section-kicker" id="participantes-regiao">07 • Créditos</div>
         <h2 id="participantes-titulo">Participantes do Projeto</h2>
         <div class="card" style="margin-bottom: 1.25rem;">
           <p>Este projeto foi desenvolvido como trabalho de extensão para a <strong>Escola Superior de Publicidade e Marketing (ESPM)</strong>, com o objetivo de produzir uma pesquisa bibliográfica abrangente sobre deficiência física no contexto organizacional.</p>
@@ -667,9 +680,9 @@
       </div>
     </section>
 
-    <section id="acessibilidade" aria-labelledby="acessibilidade-titulo" style="background: var(--surface-2);">
+    <section id="acessibilidade" aria-labelledby="acessibilidade-regiao" style="background: var(--surface-2);">
       <div class="container accessibility">
-        <div class="section-kicker" aria-hidden="true">08 • Compromisso com acessibilidade</div>
+        <div class="section-kicker" id="acessibilidade-regiao">08 • Compromisso com acessibilidade</div>
         <h2 id="acessibilidade-titulo">Medidas de Acessibilidade Digital Implementadas</h2>
         <div class="grid-2">
           <article class="card"><h3>Conformidade com WCAG</h3><p>Estrutura estática, sem dependência de scripts do Manus, com foco em contraste, legibilidade, responsividade e semântica adequada para publicação simples em GitHub Pages.</p></article>
@@ -686,9 +699,9 @@
       </div>
     </section>
 
-    <section id="referencias" class="references" aria-labelledby="referencias-titulo">
+    <section id="referencias" class="references" aria-labelledby="referencias-regiao">
       <div class="container">
-        <div class="section-kicker" aria-hidden="true">09 • Fontes consultadas</div>
+        <div class="section-kicker" id="referencias-regiao">09 • Fontes consultadas</div>
         <h2 id="referencias-titulo">Referências Bibliográficas</h2>
         <div class="card">
           <ol>
